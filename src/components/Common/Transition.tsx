@@ -7,9 +7,10 @@ type Direction = "left" | "right" | "up" | "down";
 interface TransitionProps {
   children: React.ReactNode;
   direction?: Direction;
+  _duration?: number;
 }
 
-const Transition = ({ children, direction = "left" }: TransitionProps) => {
+const Transition = ({ children, direction = "left", _duration = 0.8 }: TransitionProps) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
@@ -38,7 +39,7 @@ const Transition = ({ children, direction = "left" }: TransitionProps) => {
       initial="hidden"
       animate={controls}
       variants={fadeInVariants}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: _duration , ease: "easeOut" }}
     >
       {children}
     </motion.div>

@@ -10,7 +10,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import NomralCarousel from "./Common/Carousel/NormalCarousel";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
-function Portfolio() {
+function Projects() {
   const [itemsPerPage, setItemsPerPage] = useState(1); // Default to 1 item per page
   const totalItems = portfolioItems.length;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -79,9 +79,9 @@ function Portfolio() {
         </div>
       )}
       <div className="flex flex-col items-center text-center z-0">
-        <div className="text-[16px] text-[#e70735]">PORTOFOLIO</div>
+        <div className="text-[17px] text-[#e70735]">Projects</div>
         <div className="text-[26px] font-semibold text-[#e2dddd]">
-          Some of our best work, transforming <br />
+          Some of my best work, transforming <br />
           ideas into reality.
         </div>
       </div>
@@ -107,7 +107,7 @@ function Portfolio() {
                         style={{ flexBasis: `calc(100% / ${itemsPerPage})` }}
                       >
                         <div className="sm:p-8 ">
-                          <div className="me px-4 rounded--2xl pt-8 pb-1 rounded-2xl shadow-black shadow-three">
+                          <div className=" px-4 me rounded--2xl pt-8 pb-1 rounded-2xl ">
                             <div className="flex justify-center items-center ">
                               <img
                                 className="h-[200px] rounded-[15px] shadow-inset w-[98%]  shadow-black"
@@ -155,16 +155,16 @@ function Portfolio() {
             </div>
           </div>
 
-          <div className="flex justify-between mt-4 px-2 sm:px-4 md:px-8 lg:px-20">
+          <div className="flex relative justify-between mt-4 px-2 sm:px-4 md:px-8 lg:px-20">
             <button
               onClick={prevSlide}
-              className="text-gray-800 bg-[#e0dcdc] px-4 py-4 rounded-[50px] hover:bg-[#494848] hover:text-white"
+              className="text-[#ebe6e6] shadow-black shadow-three  relative samecolor_btn px-4 py-4 rounded-[50px] hover:bg-red-700"
             >
               <ArrowBackIcon />
             </button>
             <button
               onClick={nextSlide}
-              className="text-gray-800 bg-[#e0dcdc] px-4 py-4 rounded-[50px] hover:bg-[#494848]  hover:text-white"
+              className="text-[#ebe6e6] shadow-black shadow-three  relative samecolor_btn px-4 py-4 rounded-[50px]"
             >
               <ArrowForwardIcon />
             </button>
@@ -175,4 +175,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default Projects;

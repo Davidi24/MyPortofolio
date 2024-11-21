@@ -8,10 +8,11 @@ import Tooltip from "@mui/material/Tooltip";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DevicesOutlinedIcon from "@mui/icons-material/DevicesOutlined";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
-import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import { Link } from "react-scroll";
-import LogoutIcon from "@mui/icons-material/Logout";
+import AddchartIcon from '@mui/icons-material/Addchart';
+import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
+import "../../style/EntryPage.css"
 
 function More({ size }: { size: any }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -41,7 +42,7 @@ function More({ size }: { size: any }) {
             bgcolor: "transparent",
           }}
         >
-          <Tooltip title="Account settings" className="">
+          <Tooltip title="Account settings" >
             <IconButton
               onClick={handleClick}
               size="large"
@@ -49,6 +50,7 @@ function More({ size }: { size: any }) {
               aria-controls={open ? "account-menu" : undefined}
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
+
             >
               <ReorderIcon
                 fontSize={size}
@@ -67,10 +69,21 @@ function More({ size }: { size: any }) {
           transformOrigin={{ horizontal: "right", vertical: "top" }}
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
           className=""
+          slotProps={{
+            paper: {
+              className: "header", // Add your custom class here
+            },
+          }}
+          sx={{
+            "& .MuiPaper-root": {
+
+            },
+          }}
         >
+
           <MenuItem style={{ paddingBottom: "0px", paddingTop: "0px" }}>
             <Link
-              className="w-full  "
+              className="w-full "
               to="home"
               spy={true}
               smooth={true}
@@ -84,49 +97,16 @@ function More({ size }: { size: any }) {
               <div className="flex w-[100%] justify-left sm:py-1">
                 <HomeOutlinedIcon
                   className={
-                    activeLink === "home" ? "text-black" : "text-[#585858]"
+                    activeLink === "home" ? "text-[#bb324d]": "text-[#eee9e9]"
                   }
                 />
                 <p
-                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${
-                    activeLink === "home"
-                      ? "text-black font-extrabold"
-                      : "text-[#585858]"
-                  }`}
+                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${activeLink === "home"
+                    ? "text-[#bb324d] font-extrabold"
+                    : "text-[#FFFFFF]"
+                    }`}
                 >
                   HOME
-                </p>
-              </div>
-            </Link>
-          </MenuItem>
-
-          <MenuItem style={{ paddingBottom: "0px", paddingTop: "0px" }}>
-            <Link
-              className="w-full  "
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={300}
-              onClick={() => {
-                handleClose();
-                handleSetActive("about");
-              }}
-              onSetActive={() => handleSetActive("about")}
-            >
-              <div className="flex w-[100%] justify-left sm:py-4">
-                <GroupsOutlinedIcon
-                  className={
-                    activeLink === "about" ? "text-black" : "text-[#585858]"
-                  }
-                />
-                <p
-                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${
-                    activeLink === "about"
-                      ? "text-black font-extrabold"
-                      : "text-[#585858]"
-                  }`}
-                >
-                  ABOUT
                 </p>
               </div>
             </Link>
@@ -146,17 +126,16 @@ function More({ size }: { size: any }) {
               onSetActive={() => handleSetActive("services")}
             >
               <div className="flex w-[100%] justify-left sm:py-4">
-                <DevicesOutlinedIcon
+                <GroupsOutlinedIcon
                   className={
-                    activeLink === "services" ? "text-black" : "text-[#585858]"
+                    activeLink === "services" ? "text-[#bb324d]": "text-[#eee9e9]"
                   }
                 />
                 <p
-                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${
-                    activeLink === "services"
-                      ? "text-black font-extrabold"
-                      : "text-[#585858]"
-                  }`}
+                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${activeLink === "services"
+                    ? "text-[#bb324d] font-extrabold"
+                    : "text-[#FFFFFF]"
+                    }`}
                 >
                   SERVICES
                 </p>
@@ -167,37 +146,95 @@ function More({ size }: { size: any }) {
           <MenuItem style={{ paddingBottom: "0px", paddingTop: "0px" }}>
             <Link
               className="w-full  "
-              to="portfolio"
+              to="qualification"
               spy={true}
               smooth={true}
               duration={300}
               onClick={() => {
                 handleClose();
-                handleSetActive("portfolio");
+                handleSetActive("qualification");
               }}
-              onSetActive={() => handleSetActive("portfolio")}
+              onSetActive={() => handleSetActive("qualification")}
             >
-              <div className="flex w-[100%] justify-around sm:py-4">
-                <PublicOutlinedIcon
+              <div className="flex w-[100%] justify-left sm:py-4">
+                <WorkOutlineOutlinedIcon
                   className={
-                    activeLink === "portfolio" ? "text-black" : "text-[#585858]"
+                    activeLink === "qualification" ? "text-[#bb324d]": "text-[#eee9e9]"
                   }
                 />
                 <p
-                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${
-                    activeLink === "portfolio"
-                      ? "text-black font-extrabold"
-                      : "text-[#585858]"
-                  }`}
+                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${activeLink === "qualification"
+                    ? "text-[#bb324d] font-extrabold"
+                    : "text-[#FFFFFF]"
+                    }`}
                 >
-                  PORTFOLIO
+                  QUALIFICATION
                 </p>
               </div>
             </Link>
           </MenuItem>
 
+          <MenuItem style={{ paddingBottom: "0px", paddingTop: "0px" }}>
+            <Link
+              className="w-full  "
+              to="projects"
+              spy={true}
+              smooth={true}
+              duration={300}
+              onClick={() => {
+                handleClose();
+                handleSetActive("projects");
+              }}
+              onSetActive={() => handleSetActive("projects")}
+            >
+              <div className="flex w-[100%] justify-left sm:py-4">
+                <DevicesOutlinedIcon
+                  className={
+                    activeLink === "projects" ? "text-[#bb324d]": "text-[#eee9e9]"
+                  }
+                />
+                <p
+                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${activeLink === "projects"
+                    ? "text-[#bb324d] font-extrabold"
+                    : "text-[#FFFFFF]"
+                    }`}
+                >
+                  PROJECTS
+                </p>
+              </div>
+            </Link>
+          </MenuItem>
 
-
+          <MenuItem style={{ paddingBottom: "0px", paddingTop: "0px" }}>
+            <Link
+              className="w-full  "
+              to="skills"
+              spy={true}
+              smooth={true}
+              duration={300}
+              onClick={() => {
+                handleClose();
+                handleSetActive("skills");
+              }}
+              onSetActive={() => handleSetActive("skills")}
+            >
+              <div className="flex w-[100%] justify-left sm:py-4">
+                <AddchartIcon
+                  className={
+                    activeLink === "skills" ? "text-[#bb324d]": "text-[#eee9e9]"
+                  }
+                />
+                <p
+                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${activeLink === "skills"
+                    ? "text-[#bb324d] font-extrabold"
+                    : "text-[#FFFFFF]"
+                    }`}
+                >
+                  SKILLS
+                </p>
+              </div>
+            </Link>
+          </MenuItem>
 
           <MenuItem style={{ paddingBottom: "0px", paddingTop: "0px" }}>
             <Link
@@ -215,15 +252,14 @@ function More({ size }: { size: any }) {
               <div className="flex w-[100%] sm:py-4">
                 <PhoneOutlinedIcon
                   className={
-                    activeLink === "contact" ? "text-black" : "text-[#585858]"
+                    activeLink === "contact" ? "text-[#bb324d]": "text-[#eee9e9]"
                   }
                 />
                 <p
-                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${
-                    activeLink === "contact"
-                      ? "text-black font-extrabold"
-                      : "text-[#585858]"
-                  }`}
+                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${activeLink === "contact"
+                    ? "text-[#bb324d] font-extrabold"
+                    : "text-[#FFFFFF]"
+                    }`}
                 >
                   CONTACT
                 </p>
@@ -231,36 +267,6 @@ function More({ size }: { size: any }) {
             </Link>
           </MenuItem>
 
-          <MenuItem  style={{ paddingBottom: "0px", paddingTop: "0px" }}>
-            <Link
-              className="w-full  "
-              to=""
-              spy={true}
-              smooth={true}
-              duration={300}
-              onClick={() => {
-                handleClose();
-              }}
-             
-            >
-              <div className="flex w-[100%]  sm:py-4">
-                <LogoutIcon
-                  className={
-                    activeLink === "" ? "text-black" : "text-[#585858]"
-                  }
-                />
-                <p
-                  className={`text-[12.3px] grid items-center text-start font-lato ml-[10px] ${
-                    activeLink === ""
-                      ? "text-black font-extrabold"
-                      : "text-[#585858]"
-                  }`}
-                >
-                  LOG OUT
-                </p> 
-              </div>
-            </Link>
-          </MenuItem>
         </Menu>
       </React.Fragment>
     </div>

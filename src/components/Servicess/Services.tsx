@@ -1,5 +1,6 @@
 import SingleService from "./SingleService";
 import ServiceData from "../../data/ServicesData";
+import Transition from "../Common/Transition";
 
 const Services = () => {
   return (
@@ -20,8 +21,10 @@ const Services = () => {
 
           <div className=" mt-[30px]">
             <div className=" grid grid-cols-1 gap-x-16 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
-              {ServiceData.map((feature) => (
-                <SingleService key={feature.id} feature={feature} />
+              {ServiceData.map((feature, index) => (
+                <Transition _duration={0.8 + index * 0.2} key={feature.id}>
+                  <SingleService feature={feature} />
+                </Transition>
               ))}
             </div>
           </div>

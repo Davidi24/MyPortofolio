@@ -4,9 +4,10 @@ import { useInView } from "react-intersection-observer";
 
 interface TransitionImageProps {
   children: React.ReactNode;
+  _duration?: number;
 }
 
-const TransitionImage = ({ children }: TransitionImageProps) => {
+const TransitionImage = ({ children , _duration = 1.2}: TransitionImageProps) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -31,7 +32,7 @@ const TransitionImage = ({ children }: TransitionImageProps) => {
       animate={controls}
       variants={fadeInVariants}
       transition={{
-        duration: 1.2, // Increase duration for slower fade-in
+        duration: _duration, // Increase duration for slower fade-in
         ease: [0.42, 0, 0.58, 1], // Use a custom cubic-bezier for a smoother easing
       }}
       style={{ overflow: "hidden" }} // Prevent overflow issues

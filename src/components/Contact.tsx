@@ -6,6 +6,7 @@ import "../style/EntryPage.css"
 import SendIcon from '@mui/icons-material/Send';
 import { contactInfo } from "../data/GeneralData";
 
+
 const Contact = () => {
   const [isMessSent, setmessageSent] = useState(false);
   const [formData, setFormData] = useState<Contacts>({
@@ -67,6 +68,9 @@ const Contact = () => {
 
 
         <div className="lg:ml-[50px] bigbox shadow-black lg:h-[35rem] shadow-three py-10 px-7">
+          <div className="lg:hidden w-full flex justify-center text-center
+           text-[17px] sm:tet-[18px] md:text-[20px] mt-[-1rem] mb-6 text-[#d8d2d2] font-semibold">
+            Send a message</div>
           <form>
             <div className="-mx-4 flex flex-wrap">
 
