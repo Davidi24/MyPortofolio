@@ -36,8 +36,8 @@ function WhoAmI() {
                 <div className="flex flex-col justify-center items-center sm:items-start sm:justify-start">
                     <p className="mt-12 font-michroma text-[18px] text-[#e6dede]">Find or contact me in </p>
                     <div className="flex gap-6 mt-2">
-                        {icons.map((icon) => (
-                            <div className="h-12 w-12 box flex items-center cursor-pointer ">
+                        {icons.map((icon, index) => (
+                            <div key={index} className="h-12 w-12 box flex items-center cursor-pointer ">
                                 <img src={icon} alt="" className="" />
                             </div>
                         ))}

@@ -155,16 +155,16 @@ function Portfolio() {
             </div>
           </div>
 
-          <div className="flex justify-between mt-4 px-2 sm:px-4 md:px-8 lg:px-12">
+          <div className="flex justify-between mt-4 px-2 sm:px-4 md:px-8 lg:px-20">
             <button
               onClick={prevSlide}
-              className="text-gray-800 bg-white px-4 py-4 rounded-[50px] hover:bg-gray-900 hover:text-white"
+              className="text-gray-800 bg-[#e0dcdc] px-4 py-4 rounded-[50px] hover:bg-[#494848] hover:text-white"
             >
               <ArrowBackIcon />
             </button>
             <button
               onClick={nextSlide}
-              className="text-gray-800 bg-white px-4 py-4 rounded-[50px] hover:bg-gray-900 hover:text-white"
+              className="text-gray-800 bg-[#e0dcdc] px-4 py-4 rounded-[50px] hover:bg-[#494848]  hover:text-white"
             >
               <ArrowForwardIcon />
             </button>

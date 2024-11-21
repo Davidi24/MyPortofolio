@@ -12,41 +12,9 @@ function Header() {
   const [scrolledFromTop, setScrolledFromTop] = useState(false);
   const [isSelected, setIsSelected] = useState(0);
   const [moreSize, setMoreSize] = useState("medium");
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 
-  useEffect(() => {
-    const handleResize = () => {
-      const currentWidth = window.innerWidth;
-      setWindowWidth(currentWidth);
-    };
 
-    const handleScroll = () => {
-      if (window.scrollY >= 300) {
-        setScrolledFromTop(true);
-      } else {
-        setScrolledFromTop(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    if (windowWidth < 992) {
-      window.addEventListener("scroll", handleScroll);
-    } else {
-      window.removeEventListener("scroll", handleScroll);
-    }
-
-    // Initial check
-    if (windowWidth < 992) {
-      handleScroll(); // Check scroll position initially if width < 992
-    }
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [windowWidth]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -64,6 +32,20 @@ function Header() {
       window.removeEventListener("resize", handleResize);
     };
   }, [window.innerWidth]);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolledFromTop(window.scrollY >= 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   useEffect(() => {
     const sections = ["home", "about", "services", "portfolio", "contact"];
@@ -104,7 +86,7 @@ function Header() {
   return (
     <>
       <header
-        className={`flex fixed lg:static z-50 left-4 right-4 sm:left-8 sm:right-8 justify-between items-center transition-all duration-1000 ${scrolledFromTop ? "h-16 drop-shadow-3xl" : "h-20"
+        className={`flex fixed    lg:static z-50 left-4 right-4 sm:left-8 sm:right-8 justify-between items-center transition-all duration-1000 ${scrolledFromTop ? "h-16 drop-shadow-3xl" : "h-20"
           }`}
       >
         <a href="#" className="w-[30%] lg:w-[10%]  flex items-center">
@@ -119,9 +101,11 @@ function Header() {
 
 
 
-        <div className="Header flex justify-center align-top h-[30px] z-50 ">
-          {" "}
-          <nav className="  hidden lg:flex lg:fixed lg:text-center lg:justify-center mr-[20px] text-[#dddada] rounded-[50px] text-nowrap">
+        <div className="Header flex justify-center align-top h-[30px] z-50  ">
+          <nav
+            className={`hidden nav:flex lg:fixed lg:text-center lg:justify-center mr-[20px] text-[#dddada] rounded-[50px] text-nowrap transition-all duration-300 ${scrolledFromTop ? "samecolor mt-[-8px] " : "bg-transparent"
+              }`}
+          >
             <ul className="flex justify-between align-middle  px-6 font-thin py-[5px] text-[13px] ">
               <li
                 className={`mr-16 ${isSelected === 0 ? "underline" : ""
@@ -207,7 +191,7 @@ function Header() {
           <div className=" bg-[#e70735] py-2 px-6 rounded-full text-white">
             Download CV
           </div>
-          <div className="flex lg:hidden text-right cursor-pointer justify-start">
+          <div className="flex nav:hidden text-right cursor-pointer justify-start">
             <More size={moreSize} />
           </div>
         </div>

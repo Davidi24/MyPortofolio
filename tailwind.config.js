@@ -72,6 +72,7 @@ export default {
         mdlg: "850px",
         lg: "992px",
         lgxl: "1100px",
+        nav: "1160px", //only for this project
         xl: "1200px",
         "2xl": "1400px",
       },
