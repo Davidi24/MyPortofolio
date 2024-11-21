@@ -1,0 +1,116 @@
+.contact-form {
+  width: 100%;
+  background-color: "#F1F1F1";
+
+  /* padding-bottom: 20px; */
+}
+/* .contact-left{
+  padding-left: 130px;
+} */
+
+.contact-info {
+  margin-bottom: 10px;
+}
+.left-text {
+  font-weight: bold;
+  color: #000;
+  margin-top: 0px;
+}
+.contact-left label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  background: #000;
+  color: #ccc;
+  padding: 0px 23px; /* Padding for rounded edges */
+  border-radius: 20px; /* Rounded edges */
+  background-color: #9bb5c8; /* Example background color */
+  display: inline-block; /* Make it inline block to contain padding */
+  font-size: 15px;
+  color: #f0f0f0;
+}
+
+.contact-left p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.contact-right {
+  /* tani kete poshte  e bera koment thjesht per et par ene 
+  different devices si del me mire kur ajo label eshte sa screen apo kur eshte e 
+  kufizuar */
+  /* padding-right: 150px; Add padding to create space */
+  margin-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* .contact-right form {
+  display: flex;
+  flex-direction: column;
+} */
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group .flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+.form-group .flex-item {
+  width: 48%; /* Adjust as needed */
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  height: 120px;
+  resize: vertical;
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  padding: 10px 2px;
+  font-size: 1rem;
+  background-color: #181818;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+}
+
+button:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+button:active {
+  color: #ccc;
+  background-color: #000 !important;
+}
+
+
+.add {
+  font-weight: lighter;
+  margin-left: 20px;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.contact-con {
+  padding-left: 0px; /* Add padding to create space */
+}

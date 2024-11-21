@@ -1,0 +1,104 @@
+.EntryPage {
+    background: linear-gradient(135deg, #292828, #1d1d1d);
+    position: relative;
+    overflow: hidden;
+}
+
+.EntryPage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Halftone/dotted texture */
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 8px 8px; /* Size and spacing of the dots */
+    opacity: 0.2; /* Subtle transparency for the dots */
+    pointer-events: none; /* Prevent interaction */
+}
+
+.line {
+    background: linear-gradient(135deg, #161616, #161616);
+}
+
+
+
+
+.me {
+    background: linear-gradient(135deg, #222224, #161515);
+}
+
+.me::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 8px 8px; /* Size and spacing of the dots */
+    opacity: 0.2; /* Subtle transparency for the dots */
+    pointer-events: none; /* Prevent interaction */
+}
+
+
+.box {
+    background: linear-gradient(to bottom, #222224, #1a1818); /* Vertical gradient */
+    position: relative; /* Ensure positioning context for ::before */
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 1px, transparent 4px);
+    background-size: 8px 8px; /* Size and spacing of the dots */
+    opacity: 0.2; /* Subtle transparency for the dots */
+    pointer-events: none; /* Prevent interaction */
+}
+
+
+.bigbox {
+    background: linear-gradient(to bottom, #222224, #222121); /* Vertical gradient */
+    position: relative; /* Ensure positioning context for ::before */
+}
+
+.bigbox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 1px, transparent 4px);
+    background-size: 8px 8px; /* Size and spacing of the dots */
+    opacity: 0.2; /* Subtle transparency for the dots */
+    pointer-events: none; /* Prevent interaction */
+}
+
+
+.samecolor {
+    background: linear-gradient(to bottom, #19191a, #19191a); 
+}
+
+.samecolor::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 4px, transparent 6px);
+    background-size: 16px 16px; /* Dot grid size */
+    opacity: 0.5; /* Ensure dots are fully visible */
+    pointer-events: none;
+}
+
+
+
+

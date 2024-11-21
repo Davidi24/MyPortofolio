@@ -1,0 +1,178 @@
+.portfolio-container {
+    text-align: center; 
+    margin-top: 30px; 
+    background:transparent;
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 0px;
+}
+
+.portfolio-label {
+    font-size: 24px; 
+    padding: 0px 23px; /* Padding for rounded edges */
+    border-radius: 20px; /* Rounded edges */
+    background-color: #9BB5C8; /* Example background color */
+    display: inline-block; /* Make it inline block to contain padding */
+    font-size: 15px;
+    color:#f0f0f0;
+}
+
+.portfolio-description {
+    font-size: 30px; /* Larger text size */
+    margin-top: 20px; /* Example margin */
+    font-weight: bold;
+}
+
+.portfolio-items {
+    display: flex;
+    overflow: hidden; /* Hide overflow */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    scrollbar-width: none; 
+    padding-top: 25px;
+    padding-bottom: 27px;
+    border-radius: 0px;
+  
+    
+}
+.portfolio-item {
+    margin: 0 50px; /* Example margin between items */
+    width: 300px; /* Set a fixed width */
+    
+}
+
+.item-container {
+    border: 1px solid #ebebeb; /* Example border */
+    border-radius: 12px; /* Rounded edges */
+    padding: 10px; /* Example padding */
+    text-align: center; /* Center align content */
+    background-color:#eaeaea;
+    width: 300px; /* Set a fixed width */
+    height: 500px;
+}
+
+.item-container img {
+    max-width: 100%; /* Ensure images don't exceed container width */
+    border-top-left-radius: 12px; /* Adjust border radius for image corners */
+    border-top-right-radius: 12px;
+}
+
+
+
+.navigation-buttons {
+    margin-top: 30px; /* Example margin */
+    text-align: center; /* Center align buttons */
+}
+
+.navigation-buttons button {
+    margin: 0 10px; /* Example margin between buttons */
+    padding: 8px 16px; /* Example padding */
+    font-size: 16px; /* Example font size */
+    border-radius: 8px; /* Rounded edges */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor */
+}
+
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Example margin */
+}
+
+.arrow {
+    width: 40px; /* Adjust size */
+    height: 40px; /* Adjust size */
+    border-radius: 50%; /* Round shape */
+    background-color: #ccc; /* Light grey background */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 24px; /* Adjust size of arrow */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.arrow:hover {
+    background-color: #f0f0f0; /* Light grey on hover */
+}
+
+.project-image {
+    width: 100%; /* Ensure image fits container */
+    border-radius: 10px; /* Rounded edges */
+}
+
+.item-description {
+    margin-top: 30px; /* Example margin */
+    font-size: 19px; /* Example font size */
+    margin-bottom: 130px;
+    margin-right: 0px;
+    margin-left: 10px;
+    align-self: flex-start; /* Align to the start (left) of the container */
+    text-align: left; /* Ensure text is left-aligned */
+    font-weight: bold;
+    color: 181818;
+}
+
+.item-details{
+    margin-top: -100px;
+    align-self: flex-start; /* Align to the start (left) of the container */
+    text-align: left;
+    margin-left: 10px;
+    font-style: normal;
+    color:#595566;
+}
+
+.demo-button {
+    padding: 8px 16px; /* Example padding */
+    background-color:white; /* Example background color */
+    color: #181818; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Rounded edges */
+    font: weight 400px;;
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; 
+    margin-top: 40px;
+    margin-right: 170px;
+    position:relative;
+    /* right: 50%; */
+    
+}
+
+.demo-button:hover {
+    background-color: rgb(44, 42, 42); /* Darker background color on hover */
+    color: white;
+}
+/*#############*/
+.portfolio-items {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory; /* Optional for snapping behavior */
+}
+
+.portfolio-item {
+    min-width: 300px;
+    max-width: 300px;
+    margin: 0 15px;
+    flex-shrink: 0;
+    scroll-snap-align: center; /* Optional for snapping behavior */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.portfolio-item:hover {
+    transform: scale(1.1); /* Scale up by 10% on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+}
+
+
+.arrow {
+    cursor: pointer;
+    font-size: 2rem;
+    user-select: none;
+    padding-bottom: 10px;
+}
+

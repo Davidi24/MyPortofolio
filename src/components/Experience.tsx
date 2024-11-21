@@ -1,0 +1,63 @@
+import "../style/EntryPage.css"
+import { educationInfo, workInfo } from "../data/GeneralData"
+
+
+function Experience() {
+    return (
+        <>
+            <div className="w-full flex flex-col items-center py-8">
+                <div className="text-[#e70735] font-lato">Years of experience</div>
+                <div className="text-[35px] text-[#e6e3e3] font-semibold">My Qualification</div>
+            </div>
+
+            <div className="w-full flex flex-col xl:flex-row  gap-24">
+
+                <div className="flex-1 box shadow-black shadow-three p-8 transform transition-all duration-300 hover:scale-105">
+                    <div className="font-lato text-[24px] text-[#e6e3e3]">Job Experience</div>
+                    {workInfo.map((item, index) => (
+                        <div className="flex " key={index}>
+                            <div className="flex flex-col justify-center  items-center mt-3 ">
+                                {item.logo}
+                                <div className="mt-3 w-[3px] h-36 bg-[#131212]"></div>
+                            </div>
+                            <div className="py-4 px-8 font-lato ">
+                                <p className="text-[17px] whitespace-nowrap text-gray-200 md:text-[22px]">{item.title}</p>
+                                <div className="flex flex-col sm:flex-row  text-[11px] md:text-[13px] lgxl:text-[14px] whitespace-nowrap xl:flex-row  text-[#6f7279]">
+                                    <p>{item.company}</p>
+                                    <p className="md:ml-2 lgxl:ml-0 xl:ml-2">({item.year})</p>
+                                </div>
+                                <p className="mt-4 text-[12px] sm:text-[13px] smmd:text-[14px] md:text-[15px] text-[#b9bbbe]">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="flex-1 box shadow-black shadow-three p-8 transform transition-all duration-300 hover:scale-105">
+                    <div className="font-lato text-[24px] text-[#e6e3e3]">Education Quality</div>
+                    {educationInfo.map((item, index) => (
+                        <div className="flex " key={index}>
+                            <div className="flex flex-col justify-center  items-center mt-3 ">
+                                {item.logo}
+                                <div className="mt-3 w-[3px] h-36 bg-[#131212]"></div>
+                            </div>
+                            <div className="py-4 px-8 font-lato ">
+                                <p className="text-[17px] whitespace-nowrap text-gray-200 md:text-[22px]">{item.title}</p>
+                                <div className="flex flex-col sm:flex-row  text-[11px] md:text-[13px] lgxl:text-[14px] whitespace-nowrap xl:flex-row  text-[#6f7279]">
+                                    <p>{item.school}</p>
+                                    <p className="md:ml-2 lgxl:ml-0 xl:ml-2">({item.year})</p>
+                                </div>
+                                <p className="mt-4 text-[12px] md:text-[14px] text-[#b9bbbe]">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default Experience
