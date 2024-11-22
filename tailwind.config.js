@@ -54,40 +54,41 @@ export default {
         "btn-hover": "0px 1px 2px rgba(0, 0, 0, 0.15)",
         "btn-light": "0px 1px 2px rgba(0, 0, 0, 0.1)",
         inset: 'inset 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 -4px 8px rgba(255, 255, 255, 0)',
-      },
-      dropShadow: {
-        three: "0px 5px 15px rgba(6, 8, 15, 0.05)",
-      },
-      container: {
-        center: true,
-        padding: "1rem",
-      },
-      screens: {
-        xxs: "400px",
-        xs: "450px",
-        xssm: "500px",
-        sm: "575px",
-        smmd: "680px",
-        md: "768px",
-        mdlg: "850px",
-        lg: "992px",
-        lgxl: "1100px",
-        nav: "1160px", //only for this project
-        xl: "1200px",
-        "2xl": "1400px",
-      },
-      fontWeight: {
-        normale: 400,
-        "extra-bold": 650,
-      },
-      fontFamily: {
-        lato: ["Lato", "sans-serif"],
-        michroma: ["Michroma", "sans-serif"],
-        "kumbh-sans": ['"Kumbh Sans"', "sans-serif"],
-      },
+        inset_custom: 'inset 0px 8px 20px rgba(0, 0, 0, 0.8)',
+    },
+    dropShadow: {
+      three: "0px 5px 15px rgba(6, 8, 15, 0.05)",
+    },
+    container: {
+      center: true,
+      padding: "1rem",
+    },
+    screens: {
+      xxs: "400px",
+      xs: "450px",
+      xssm: "500px",
+      sm: "575px",
+      smmd: "680px",
+      md: "768px",
+      mdlg: "850px",
+      lg: "992px",
+      lgxl: "1100px",
+      nav: "1160px", //only for this project
+      xl: "1200px",
+      "2xl": "1400px",
+    },
+    fontWeight: {
+      normale: 400,
+      "extra-bold": 650,
+    },
+    fontFamily: {
+      lato: ["Lato", "sans-serif"],
+      michroma: ["Michroma", "sans-serif"],
+      "kumbh-sans": ['"Kumbh Sans"', "sans-serif"],
     },
   },
-  plugins: [
-    flowbite.plugin(),
-  ],
+},
+plugins: [
+  flowbite.plugin(),
+],
 };

@@ -48,6 +48,14 @@ export const contactInfo = [
 
 
 export const educationInfo = [
+    
+    {
+        logo: <SchoolIcon className="text-[#bb324d]" fontSize="large" />,
+        title: "Software Engineering",
+        school: "Epoka University",
+        year: "2021-2024",
+        description: "Other styles interfering. You can inspect the element in the browser's developer tools to see if any other styles are overriding the size and adjust accordingly. tools to see if any other styles are overriding the size and adjust accordingly."
+    },
     {
         logo: <SchoolIcon className="text-[#bb324d]" fontSize="large" />,
         title: "Web Engineering",
@@ -55,14 +63,6 @@ export const educationInfo = [
         year: "2024-2026",
         description: "Other styles interfering. You can inspect the element in the browser's developer tools to see if any other styles are overriding the size and adjust accordingly. tools to see if any other styles are overriding the size and adjust accordingly."
     },
-
-    {
-        logo: <SchoolIcon className="text-[#bb324d]" fontSize="large" />,
-        title: "Software Engineering",
-        school: "Epoka University",
-        year: "2021-2024",
-        description: "Other styles interfering. You can inspect the element in the browser's developer tools to see if any other styles are overriding the size and adjust accordingly. tools to see if any other styles are overriding the size and adjust accordingly."
-    }
 ]
 
 

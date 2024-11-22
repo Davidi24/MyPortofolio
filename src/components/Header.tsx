@@ -7,15 +7,14 @@ import {
 import avatar from '../assets/Icons/avatar.png'
 import "../style/EntryPage.css"
 import Transition from "./Common/Transition";
+import { handledownload } from "../utilities/Helpers/ExternalConnection";
+import cv from "../assets/Documents/CV_David_Keci.pdf"
 
 
 function Header() {
   const [scrolledFromTop, setScrolledFromTop] = useState(false);
   const [isSelected, setIsSelected] = useState(0);
   const [moreSize, setMoreSize] = useState("medium");
-
-
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -84,6 +83,7 @@ function Header() {
 
 
 
+
   return (
     <>
       <header
@@ -110,7 +110,7 @@ function Header() {
                 className={`hidden nav:flex lg:fixed lg:text-center lg:justify-center mr-[20px] text-[#dddada] rounded-[50px] text-nowrap transition-all duration-300 ${scrolledFromTop ? "samecolor mt-[-8px] " : "bg-transparent"
                   }`}
               >
-                <ul className="flex justify-between align-middle  px-6 font-thin py-[5px] text-[13px] ">
+                <ul className="flex justify-between align-middle  px-6 font-medium  py-[5px] text-[13px] ">
                   <li
                     className={`mr-16 ${isSelected === 0 ? "underline" : ""
                       }  cursor-pointer hover:underline mt-[3px]`}
@@ -194,7 +194,10 @@ function Header() {
 
         <Transition>
           <div className="flex items-center">
-            <div className=" bg-[#e70735] py-2 px-4 sm:px-6 sm:text-[14px] cursor-pointer font-semibold text-[12px] rounded-full text-white">
+            <div onClick={() => {
+              handledownload(cv);
+            }} 
+            className=" bg-[#e70735] py-2 px-4 sm:px-6 sm:text-[14px] cursor-pointer font-semibold text-[12px] rounded-full text-white">
               Download CV
             </div>
             <div className="flex nav:hidden text-right cursor-pointer justify-start">

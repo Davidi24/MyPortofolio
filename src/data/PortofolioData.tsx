@@ -2,13 +2,21 @@ import artHive from "../assets/Images/EntryPage/scArtHive.png";
 import aeDestribution from "../assets/Images/EntryPage/scAEDISTRIBUTION.png";
 import kosherja from "../assets/Images/EntryPage/scKosh1.png";
 import tastyRush from "../assets/Images/EntryPage/scTasty1.png";
-import hotel from "../assets/Images/EntryPage/scHotel4.png";
-import startup from "../assets/Images/EntryPage/scStartUp2.png";
+import chiefsoft from "../assets/Images/EntryPage/chiefsoft.png"
 
 export const portfolioItems = [
   {
+    id: -1,
+    livedemo: true,
+    image: chiefsoft,
+    description: "ArtHive",
+    details:
+      "A platform for artists to showcase their work and connect with art lovers.",
+  }
+  ,
+  {
     id: 0,
-    livedemo:true,
+    livedemo: false,
     image: artHive,
     description: "ArtHive",
     details:
@@ -38,22 +46,6 @@ export const portfolioItems = [
     details:
       "A comprehensive system for effectively managing student accommodation.",
   },
-  {
-    id: 4,
-    livedemo: false,
-    image: hotel,
-    description: "Hotel Colosseo ",
-    details:
-      "A complete and efficient management system designed for a hotel",
-  },
-  {
-    id: 5,
-    livedemo: false,
-    image: startup,
-    description: "Nexus",
-    details:
-      "A comprehensive platform for startups to streamline their operations and manage growth.",
-  },
 ];
 
 import imag0 from "../assets/Images/EntryPage/scArtHive.png";
@@ -78,20 +70,17 @@ import kosh2 from "../assets/Images/EntryPage/scKosh2.png";
 import kosh3 from "../assets/Images/EntryPage/scKosh3.png";
 import kosh4 from "../assets/Images/EntryPage/scKosh4.png";
 
-import hot1 from "../assets/Images/EntryPage/scHotel.png";
-import hot2 from "../assets/Images/EntryPage/scHotel1.png";
-import hot3 from "../assets/Images/EntryPage/scHotel2.png"
-import hot4 from "../assets/Images/EntryPage/scHotel3.png";
-import hot5 from "../assets/Images/EntryPage/scHotel4.png";
 
-import start1 from "../assets/Images/EntryPage/scStartUp.png";
-import start2 from "../assets/Images/EntryPage/scStartUp1.png";
-import start3 from "../assets/Images/EntryPage/scStartUp2.png";
-import start4 from "../assets/Images/EntryPage/scStartUp3.png";
-import start5 from "../assets/Images/EntryPage/scStartUp4.png";
+
+
 
 
 export const portofolioCarouselData = [
+  {
+    id: -1,
+    images: [chiefsoft],
+  },
+
   {
     id: 0,
     images: [imag0, imag1, imag2, imag3, imag4],
@@ -108,12 +97,5 @@ export const portofolioCarouselData = [
     id: 3,
     images: [kosh1, kosh2, kosh3, kosh4],
   },
-  {
-    id: 4,
-    images: [hot5,hot4, hot3, hot2, hot1],
-  },
-  {
-    id: 5,
-    images: [start1,start2, start3, start4, start5],
-  },
+  
 ];

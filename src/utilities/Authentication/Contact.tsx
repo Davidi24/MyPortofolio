@@ -1,4 +1,4 @@
-import { Contacts } from "../../../types/Contact";
+import { Contacts } from "../../types/Contact";
 export const checkAtributes = (formData: Contacts) => {
     const { fullName, email, phone, message } = formData;
   

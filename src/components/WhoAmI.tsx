@@ -3,6 +3,7 @@ import "../style/EntryPage.css"
 import { icons } from "../data/IconData";
 import { personalInfo } from "../data/GeneralData";
 
+
 function WhoAmI() {
     return (
         <div className="sm:flex w-full mt-16 lg:mt-10">
@@ -37,8 +38,8 @@ function WhoAmI() {
                     <p className="mt-12 font-michroma text-[18px] text-[#e6dede]">Find or contact me in </p>
                     <div className="flex gap-6 mt-2">
                         {icons.map((icon, index) => (
-                            <div key={index} className="h-12 w-12 box flex items-center cursor-pointer ">
-                                <img src={icon} alt="" className="" />
+                            <div onClick={icon.onClick} key={index} className="h-12 w-12 box flex items-center cursor-pointer ">
+                                <img src={icon.src} alt={icon.alt} className="" />
                             </div>
                         ))}
                     </div>

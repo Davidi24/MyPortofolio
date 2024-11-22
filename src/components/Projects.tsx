@@ -9,6 +9,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import NomralCarousel from "./Common/Carousel/NormalCarousel";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import { openWebsite } from "../utilities/Helpers/ExternalConnection";
 
 function Projects() {
   const [itemsPerPage, setItemsPerPage] = useState(1); // Default to 1 item per page
@@ -103,12 +104,13 @@ function Projects() {
                     {getPageItems(index).map((item: any, itemIndex: number) => (
                       <div
                         key={itemIndex}
-                        className="flex-1   gap-6 rounded-[10px] flex-shrink-0 transform transition-transform duration-300 hover:scale-[1.15] hover:shadow-lg"
+                        className="flex-1 bg-transparent  gap-6 rounded-[10px] flex-shrink-0 transform transition-transform duration-300 hover:scale-[1.15] hover:shadow-lg"
                         style={{ flexBasis: `calc(100% / ${itemsPerPage})` }}
                       >
                         <div className="sm:p-8 ">
                           <div className=" px-4 me rounded--2xl pt-8 pb-1 rounded-2xl ">
-                            <div className="flex justify-center items-center ">
+                            <div className="flex justify-center items-center relative">
+                              <div className="absolute  h-full bg-gray-500 opacity-5 w-[98%]  rounded-[15px]"></div>
                               <img
                                 className="h-[200px] rounded-[15px] shadow-inset w-[98%]  shadow-black"
                                 src={item.image}
@@ -124,12 +126,18 @@ function Projects() {
                             <div className="px-2 py-3  bottom-0 mb-6">
                               <button
                                 onClick={() => {
-                                  handleLearnMore(item.id);
+                                  if (item.livedemo) {
+                                    openWebsite('https://chiefsoft.onrender.com/')
+                                  }
+                                  else {
+                                    handleLearnMore(item.id);
+                                  }
+
                                 }}
                                 className="px-6 text-[#ebe5e5] bg-[#bb324d] rounded-full py-[0.35rem]  font-extra-bold text-[16px] hover:text-white hover:cursor-pointer hover:bg-[#9e2e45]"
                               >
-                                {item.livedemo == true ? "Live demo": "More info"}
-                                <RemoveRedEyeIcon className="ml-3 text-[#dbd2d2]"/>
+                                {item.livedemo == true ? "Live demo" : "More info"}
+                                <RemoveRedEyeIcon className="ml-3 text-[#dbd2d2]" />
                               </button>
                             </div>
                           </div>
@@ -142,7 +150,7 @@ function Projects() {
                         (_, i) => (
                           <div
                             key={`empty-${i}`}
-                            className="flex-1 bg-gray-200 flex-shrink-0"
+                            className="flex-1  flex-shrink-0"
                             style={{
                               flexBasis: `calc(100% / ${itemsPerPage})`,
                             }}
