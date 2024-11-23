@@ -20,7 +20,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export const footerIcons = [
   { icon: <LinkedInIcon fontSize="medium" />, onClick: () => openLinkedInPage("david-keci-917712274") },
-  { icon: <InstagramIcon fontSize="medium" />, onClick: () => openInstagramPage("david__keqi") },
+  { icon: <InstagramIcon fontSize="medium" />, onClick: () => openInstagramPage("david__keci") },
   { icon: <EmailOutlinedIcon fontSize="medium" />, onClick: () => openGmail("kecidavid22@example.com") },
   { icon: <GitHubIcon fontSize="medium" />, onClick: () => openGitHubPage("Davidi24") },
   { icon: <WhatsAppIcon fontSize="medium" />, onClick: () => openWhatsApp("+355677564436") },
