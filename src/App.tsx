@@ -9,7 +9,6 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<EntryPage />} />
-        
         </Routes>
       </div>
     </BrowserRouter>

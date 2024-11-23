@@ -8,8 +8,8 @@ function Footer() {
             <div className="w-full  mt-8 flex flex-col justify-center items-center">
                 <div className="flex gap-5">
                     {footerIcons.map((item, index) => (
-                        <div className="box p-2 shadow-black shadow-three text-[#d3cbcb] cursor-pointer" key={index}>
-                            {item}
+                        <div onClick={item.onClick} className="box p-2 shadow-black shadow-three text-[#d3cbcb] cursor-pointer" key={index}>
+                            {item.icon}
                         </div>
                     ))}
                 </div>

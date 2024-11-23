@@ -5,10 +5,12 @@ import { useEffect } from "react";
 import "../style/EntryPage.css"
 import SendIcon from '@mui/icons-material/Send';
 import { contactInfo } from "../data/GeneralData";
+import { sendMessage } from "../utilities/Helpers/ExternalConnection";
 
 
 const Contact = () => {
   const [isMessSent, setmessageSent] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
   const [formData, setFormData] = useState<Contacts>({
     fullName: "",
     email: "",
@@ -16,6 +18,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -33,6 +36,26 @@ const Contact = () => {
       return () => clearTimeout(timer);
     }
   }, [isMessSent]);
+
+  const handleSubmit = async () => {
+    console.log("here")
+    const result = await sendMessage(formData);
+    if (result == "Form Submitted Successfully") {
+      setmessageSent(true)
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+      setErrorMsg('');
+    }
+    else {
+      setmessageSent(false)
+      setErrorMsg(result);
+    }
+  }
 
   return (
     <>
@@ -71,7 +94,7 @@ const Contact = () => {
           <div className="lg:hidden w-full flex justify-center text-center
            text-[17px] sm:tet-[18px] md:text-[20px] mt-[-1rem] mb-6 text-[#d8d2d2] font-semibold">
             Send a message</div>
-          <form>
+          <div>
             <div className="-mx-4 flex flex-wrap">
 
               <div className="w-full px-4 md:w-1/2">
@@ -80,7 +103,7 @@ const Contact = () => {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
-                    placeholder="Enter your full name"
+                    placeholder="Enter your full name *"
                     className="w-full rounded-md  shadow-inset samecolor px-6 py-3 text-base text-white outline-none  focus:font-medium "
                   />
                 </div>
@@ -92,7 +115,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Enter your email"
+                    placeholder="Enter your email *"
                     className="w-full rounded-md  shadow-inset samecolor px-6 py-3 text-base text-white outline-none  focus:font-medium " />
                 </div>
               </div>
@@ -103,7 +126,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Enter your phone number"
+                    placeholder="Enter your phone number *"
                     className="w-full rounded-md  shadow-inset samecolor px-6 py-3 text-base text-white outline-none  focus:font-medium " />
                 </div>
               </div>
@@ -125,20 +148,25 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Type your message"
+                    placeholder="Type your message *"
                     className="w-full rounded-md border-none focus:border-none shadow-inset samecolor h-48 px-6 py-3 text-base text-white outline-none focus:ring focus:ring-transparent"
                   ></textarea>
                 </div>
 
                 <div>
-                  <div className="ml-5 mt-[-1rem] mb-2 text-red-600">
+                  <div className="ml-5 mt-[-1rem] mb-2 text-[#d33857]">
+                    {errorMsg}
                   </div>
                 </div>
 
+
               </div>
 
+
+
               <div className="px-4 w-full flex justify-center  mt-4 mb-2 ">
-                <div className=" box flex  shadow-inset rounded-md cursor-pointer">
+                <div onClick={handleSubmit}
+                  className=" box flex  shadow-inset rounded-md cursor-pointer">
                   <button
                     className="p-0 relative m-0 w-full rounded-md  px-6 py-3 text-base text-gray-300 outline-none focus:font-medium appearance-none border-0"
                   >
@@ -151,7 +179,7 @@ const Contact = () => {
               </div>
 
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </>

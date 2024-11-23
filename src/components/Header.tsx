@@ -48,22 +48,24 @@ function Header() {
 
 
   useEffect(() => {
-    const sections = ["home", "about", "services", "portfolio", "contact"];
+    const sections = ["home", "services", "qualification", "projects", "contact"];
     const sectionElements = sections.map((id) => document.getElementById(id));
 
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: [0.2, 0.5, 0.8],
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
+        console.log("Observed:", entry.target.id, "Intersecting:", entry.isIntersecting);
         if (entry.isIntersecting) {
           const index = sections.indexOf(entry.target.id);
           setIsSelected(index);
         }
       });
+      
     }, observerOptions);
 
     sectionElements.forEach((element) => {
@@ -92,14 +94,14 @@ function Header() {
       >
 
         <Transition>
-          <a href="#" className="w-[30%] lg:w-[10%]  flex items-center">
+          <a href="#" className="w-[30%] lg:w-[10%] flex items-center">
             <img
               src={avatar}
               alt="ChitChat Logo"
-              className={`h-[4.5rem] min-w-16 whitespace-nowrap   transform origin-left transition duration-200 ${scrolledFromTop ? "scale-75" : "scale-100"
+              className={`h-[4rem]  text-[#d1cccc] min-w-16 whitespace-nowrap   transform origin-left transition duration-200 ${scrolledFromTop ? "scale-75" : "scale-100"
                 }`}
             />
-            <p className={`text-white text-[15px] sm:text-[18px] md:text-[22px] font-bold ml-[-0.3rem] ${scrolledFromTop ? "ml-[-1.3rem]" : ""} sm:ml-0 text-[20px] whitespace-nowrap transition-all duration-smoothie ease-smoothie `}>David Keci</p>
+            <p className={`text-white ml-2 md:ml-4 text-[15px] sm:text-[18px]  md:text-[22px] font-bold  items-baseline ${scrolledFromTop ? "ml-[-0.5rem] items" : ""} sm:ml-0 text-[20px] whitespace-nowrap transition-all duration-smoothie ease-smoothie `}>David Keci</p>
           </a>
         </Transition>
 
@@ -111,9 +113,10 @@ function Header() {
                   }`}
               >
                 <ul className="flex justify-between align-middle  px-6 font-medium  py-[5px] text-[13px] ">
+
                   <li
                     className={`mr-16 ${isSelected === 0 ? "underline" : ""
-                      }  cursor-pointer hover:underline mt-[3px]`}
+                      } cursor-pointer hover:underline mt-[3px]`}
                   >
                     <Link
                       to="home"
@@ -125,6 +128,7 @@ function Header() {
                       HOME
                     </Link>
                   </li>
+
                   <li
                     className={`mr-16 ${isSelected === 1 ? "underline" : ""
                       } cursor-pointer hover:underline mt-[3px]`}
@@ -139,6 +143,7 @@ function Header() {
                       SERVICES
                     </Link>
                   </li>
+
                   <li
                     className={`mr-16 ${isSelected === 2 ? "underline" : ""
                       } cursor-pointer hover:underline mt-[3px]`}
@@ -196,8 +201,8 @@ function Header() {
           <div className="flex items-center">
             <div onClick={() => {
               handledownload(cv);
-            }} 
-            className=" bg-[#e70735] py-2 px-4 sm:px-6 sm:text-[14px] cursor-pointer font-semibold text-[12px] rounded-full text-white">
+            }}
+              className=" bg-[#e70735] py-2 px-4 sm:px-6 sm:text-[14px] cursor-pointer font-semibold text-[12px] rounded-full text-white">
               Download CV
             </div>
             <div className="flex nav:hidden text-right cursor-pointer justify-start">

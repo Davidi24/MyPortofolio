@@ -2,7 +2,7 @@ import linkedin from "../assets/Icons/linkedin.png";
 import github from "../assets/Icons/github.png";
 import gmail from "../assets/Icons/gmail.png"
 import wp from "../assets/Icons/wp.png"
-import { openGitHubPage, openLinkedInPage, openGmail, openWhatsApp } from "../utilities/Helpers/ExternalConnection";
+import { openGitHubPage, openLinkedInPage, openGmail, openWhatsApp, openInstagramPage } from "../utilities/Helpers/ExternalConnection";
 
 export const icons = [
     { src: linkedin, alt: "LinkedIn", onClick: () => openLinkedInPage("david-keci-917712274") },
@@ -19,11 +19,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 
 export const footerIcons = [
-    <LinkedInIcon fontSize="medium"/>,
-    <InstagramIcon fontSize="medium"/>,
-    <EmailOutlinedIcon fontSize="medium"/>,
-    <GitHubIcon fontSize="medium"/>, 
-    <WhatsAppIcon fontSize="medium"/>
-   ]
-   
+  { icon: <LinkedInIcon fontSize="medium" />, onClick: () => openLinkedInPage("david-keci-917712274") },
+  { icon: <InstagramIcon fontSize="medium" />, onClick: () => openInstagramPage("david__keqi") },
+  { icon: <EmailOutlinedIcon fontSize="medium" />, onClick: () => openGmail("kecidavid22@example.com") },
+  { icon: <GitHubIcon fontSize="medium" />, onClick: () => openGitHubPage("Davidi24") },
+  { icon: <WhatsAppIcon fontSize="medium" />, onClick: () => openWhatsApp("+355677564436") },
+];
 

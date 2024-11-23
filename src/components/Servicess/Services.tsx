@@ -5,7 +5,7 @@ import Transition from "../Common/Transition";
 const Services = () => {
   return (
     <>
-      <div className="bg-transparent">
+      <div className="bg-transparent" >
         <section
           id="features"
           className="py-10 sm:py-4 md:py-0 lg:py-26 md:pt-16 lg:pt-16   bg-transparent"
@@ -15,7 +15,7 @@ const Services = () => {
               My Services
             </div>
           </div>
-          <div className="mt-[-3px]  text-white font-semibold text-[29px] md:text-[30px] lg:text-[40px] flex justify-center items-center">
+          <div  className="mt-[-3px]  text-white font-semibold text-[29px] md:text-[30px] lg:text-[40px] flex justify-center items-center">
             <div>What I do </div>
           </div>
 
