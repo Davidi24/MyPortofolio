@@ -43,11 +43,11 @@ const EntryPage = () => {
 
     return (
         <>
-            <div  className=' EntryPage relative w-full  px-6 lg:px-24'>
-                <div  className={`${isWidthLarge ? "hidden" : ""} w-full z-50 h-16  top-0 left-0 fixed px-[-1.5rem] ${scrolledFromTop ? "shadow-black shadow-three header" : ""}`}>
+            <div className=' EntryPage relative w-full  px-6 lg:px-24'>
+                <div className={`${isWidthLarge ? "hidden" : ""} w-full z-50 h-16  top-0 left-0 fixed px-[-1.5rem] ${scrolledFromTop ? "shadow-black shadow-three header" : ""}`}>
                 </div>
                 <div id="home">
-                <Header />
+                    <Header />
                 </div>
                 <div className="mt-14 lg:mt-0" >
                     <Transition direction="down" >
