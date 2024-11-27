@@ -16,7 +16,7 @@ function WhoAmI() {
                 </div>
 
                 <div className="w-full flex  items-center justify-center sm:justify-start tracking-wider sm:tracking-normal">
-                    <p className="font-michroma  text-[22px] md:text-[24px] mt-[-6px]">{personalInfo.profession}</p>
+                    <p className="font-michroma  text-[22px] lg:text-[26px] md:text-[24px] mt-[-6px]">{personalInfo.profession}</p>
                 </div>
 
                 {/* Image when small */}
@@ -27,8 +27,8 @@ function WhoAmI() {
 
 
                 <div className="flex flex-col justify-center sm:justify-start items-center sm:items-start mt-10 sm:mt-6  font-michroma ">
-                    <p className="text-[19px] text-[#f3efef]">Aboaut me</p>
-                    <p className="text-center sm:text-start text-gray-400 mt-1">
+                    <p className="text-[19px] text-[#e4e0e0]">About me</p>
+                    <p className="text-center sm:text-start text-gray-400 mt-1 text-[13px]  md:text-[14px]">
                         {personalInfo.abautMe}
                     </p>
                 </div>

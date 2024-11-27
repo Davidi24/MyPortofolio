@@ -8,9 +8,10 @@ interface TransitionProps {
   children: React.ReactNode;
   direction?: Direction;
   _duration?: number;
+  className?: string; // Add className prop to accept external classes
 }
 
-const Transition = ({ children, direction = "left", _duration = 0.8 }: TransitionProps) => {
+const Transition = ({ children, direction = "left", _duration = 0.8, className = "" }: TransitionProps) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
@@ -39,7 +40,8 @@ const Transition = ({ children, direction = "left", _duration = 0.8 }: Transitio
       initial="hidden"
       animate={controls}
       variants={fadeInVariants}
-      transition={{ duration: _duration , ease: "easeOut" }}
+      transition={{ duration: _duration, ease: "easeOut" }}
+      className={className} // Apply the incoming className here
     >
       {children}
     </motion.div>

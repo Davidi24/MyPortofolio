@@ -4,7 +4,7 @@ import TransitionImage from "./Common/TransitionImage";
 
 const Skills = () => {
   return (
-    <div className=" text-[#d4cfcf]">
+    <div className=" text-[#d4cfcf] lg:px-14">
       <h1 className="text-center text-3xl font-bold mb-8">My Skills</h1>
       <div className="flex flex-wrap justify-center gap-4">
         {skills.map((skill, index) => (

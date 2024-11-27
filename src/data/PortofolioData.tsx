@@ -11,7 +11,7 @@ export const portfolioItems = [
     image: chiefsoft,
     description: "ArtHive",
     details:
-      "A platform for artists to showcase their work and connect with art lovers.",
+      "A professional website for a startup to showcase their services.",
   }
   ,
   {

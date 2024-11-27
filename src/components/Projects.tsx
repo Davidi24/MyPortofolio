@@ -107,7 +107,7 @@ function Projects() {
                         className="flex-1 bg-transparent  gap-6 rounded-[10px] flex-shrink-0 transform transition-transform duration-300 hover:scale-[1.15] hover:shadow-lg"
                         style={{ flexBasis: `calc(100% / ${itemsPerPage})` }}
                       >
-                        <div className="sm:p-8 ">
+                        <div className="sm:p-8">
                           <div className=" px-4 me rounded--2xl pt-8 pb-1 rounded-2xl ">
                             <div className="flex justify-center items-center relative">
                               <div className="absolute  h-full bg-gray-500 opacity-5 w-[98%]  rounded-[15px]"></div>
@@ -134,7 +134,7 @@ function Projects() {
                                   }
 
                                 }}
-                                className="px-6 text-[#ebe5e5] bg-[#bb324d] rounded-full py-[0.35rem]  font-extra-bold text-[16px] hover:text-white hover:cursor-pointer hover:bg-[#9e2e45]"
+                                className="px-6 text-[#ebe5e5] bg-[#bb324d] rounded-full py-[0.35rem]  font-extra-bold text-[16px] hover:text-white hover:cursor-pointer hover:bg-[#9e2e45] whitespace-nowrap"
                               >
                                 {item.livedemo == true ? "Live demo" : "More info"}
                                 <RemoveRedEyeIcon className="ml-3 text-[#dbd2d2]" />
