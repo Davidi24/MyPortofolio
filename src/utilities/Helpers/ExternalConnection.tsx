@@ -2,28 +2,49 @@ import { Contacts } from "../../types/Contact";
 
 
 
-export const handledownload = (cv: string) => {
-  if (cv.startsWith("data:") || cv.startsWith("blob:")) {
-    const blob = cv.startsWith("data:")
-      ? dataURLtoBlob(cv)
-      : new Blob([cv], { type: "application/pdf" });
+export const handleDownload = (cv: string) => {
+  const isDataURL = cv.startsWith("data:");
+  const isBlobURL = cv.startsWith("blob:");
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  let blob: Blob | null = null;
+
+  if (isDataURL) {
+    blob = dataURLtoBlob(cv);
+  } else if (isBlobURL) {
+    blob = new Blob([cv], { type: "application/pdf" });
+  }
+
+  if (blob) {
     const blobURL = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = blobURL;
-    link.download = "CV_David_Keci.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    link.download = "CV_DavidKeci.pdf";
+
+    if (isSafari) {
+      window.open(blobURL, "_blank");
+    } else {
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
     URL.revokeObjectURL(blobURL);
   } else {
     const link = document.createElement("a");
     link.href = cv;
-    link.download = "CV_David_Keci.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    link.download = "CV_DavidKeci.pdf";
+
+    if (isSafari) {
+      window.open(cv, "_blank");
+    } else {
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   }
 };
+
 
 const dataURLtoBlob = (dataURL: string) => {
   const [header, base64] = dataURL.split(",");

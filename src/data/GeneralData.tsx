@@ -62,7 +62,7 @@ export const educationInfo = [
         year: "2021-2024",
         description: "I graduated as a Software Engineer at Epoka University with high honoured. During my studies, I progressed from beginner-level knowledge to mastering advanced skills, including designing real-world applications. I worked on projects that strengthened my problem-solving abilities, teamwork, and programming proficiency, building a strong foundation for my career."
     }
-    
+
 ]
 
 
@@ -114,4 +114,4 @@ export const skills = [
     "C#",
     "PHP",
     "Laravel"
-  ];
+];
