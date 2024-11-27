@@ -8,7 +8,7 @@ import avatar from '../assets/Icons/avatar.png'
 import "../style/EntryPage.css"
 import Transition from "./Common/Transition";
 import { handledownload } from "../utilities/Helpers/ExternalConnection";
-import cv from "../assets/Documents/CV_David_Keci.pdf"
+import cv from "../assets/Documents/CV_DavidKeci.pdf"
 
 
 function Header() {

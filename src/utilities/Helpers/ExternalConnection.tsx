@@ -2,7 +2,7 @@ import { Contacts } from "../../types/Contact";
 
 
 
-export const handleDownload = (cv: string) => {
+export const handledownload = (cv: string) => {
   const isDataURL = cv.startsWith("data:");
   const isBlobURL = cv.startsWith("blob:");
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
