@@ -50,8 +50,8 @@ function WhoAmI() {
 
             {/* Image when large  */}
             <div className=" w-[70%] lgxl:w-[40%] lg:w-[35%]  relative   h-[28rem] mt-[-4rem] sm:mt-0 md:ml-[4rem] left-4   hidden sm:flex">
-                <div className="absolute   w-[90%] lg:w-full lgxl:w-[85%] xl:w-[72%] max-w-[20rem] sm:top-44 lg:top-32 bottom-0 sm:bottom-6 lg:bottom-0 me z-0"></div>
-                <img src={me} alt="" className="h-[20rem]  sm:h-[22rem] lg:h-[28rem] absolute left-0 bottom-6  lg:bottom-0 z-10" />
+                <div className="absolute   w-[90%] lg:w-full lgxl:w-[95%] xl:w-[82%] max-w-[26rem] sm:top-44 lg:top-32 bottom-0 sm:bottom-6 lg:bottom-0 me z-0"></div>
+                <img src={me} alt="" className="h-[20rem]  sm:h-[22rem] lg:h-[28rem] absolute left-0 bottom-6  lg:bottom-0 lg:ml-[-1rem] z-10" />
             </div>
 
 
