@@ -9,7 +9,7 @@ export const portfolioItems = [
     id: -1,
     livedemo: true,
     image: chiefsoft,
-    description: "ArtHive",
+    description: "ChiefSoft",
     details:
       "A professional website for a startup to showcase their services.",
   }
