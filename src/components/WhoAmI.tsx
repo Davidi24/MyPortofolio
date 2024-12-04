@@ -22,7 +22,7 @@ function WhoAmI() {
                 {/* Image when small */}
                 <div className="flex items-center justify-center relative sm:hidden  w-full  mt-5">
                     <div className="absolute w-[85%] xssm:w-[60%] flex items-center justify-center me  h-[13.5rem] bottom-0"></div>
-                    <img src={me} alt="" className="h-[24rem] relative ml-6 w-full" />
+                    <img src={me} alt="" className="h-[24rem] relative ml-6 min-w-[25rem]" />
                 </div>
 
 
