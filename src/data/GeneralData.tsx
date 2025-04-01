@@ -94,6 +94,8 @@ export const personalInfo =
 export const skills = [
     "Java",
     "Spring",
+    "JWT/OAuth",
+    "Microservices",
     "JavaScript",
     "TypeScript",
     "React",
@@ -108,7 +110,6 @@ export const skills = [
     "SQL",
     "Git",
     "Github Actions (CI/CD)",
-    "JWT/OAuth",
     "WebSocket/Socket.io",
     "Python",
     "C#",
