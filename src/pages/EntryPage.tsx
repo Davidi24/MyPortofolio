@@ -43,7 +43,7 @@ const EntryPage = () => {
 
     return (
         <>
-<div className=" px-4 me rounded--2xl pt-8 pb-1 rounded-2xl ">
+              <div className=' EntryPage relative w-full  px-6 lg:px-24  2xl:px-[10rem]  3xl:px-[20rem] 4xl:px-[30rem]'>
                 <div className={`${isWidthLarge ? "hidden" : ""} w-full z-50 h-16  top-0 left-0 fixed px-[-1.5rem] ${scrolledFromTop ? "shadow-black shadow-three header" : ""}`}>
                 </div>
                 <div id="home">

@@ -68,6 +68,7 @@ export default {
       xs: "450px",
       xssm: "500px",
       sm: "575px",
+      ssm: "",
       smmd: "680px",
       md: "768px",
       mdlg: "850px",
@@ -76,6 +77,9 @@ export default {
       nav: "1160px", //only for this project
       xl: "1200px",
       "2xl": "1400px",
+      "3xl":"1800px",
+      "4xl":"2100px",
+      "5xl":"2500px"
     },
     fontWeight: {
       normale: 400,
