@@ -16,7 +16,7 @@ export const contactInfo = [
                     xl: '50px'
                 }
             }} />,
-        info: "Vettersstr. 52, 09126 Chemnitz"
+        info: "Chemnitz"
     },
     {
         logo: <LocalPhoneOutlinedIcon className="text-[#d33857]"
