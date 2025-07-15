@@ -43,6 +43,14 @@ export const handledownload = (cv: string) => {
       document.body.removeChild(link);
     }
   }
+
+  sendMessage({
+    fullName: "CV Download Notification",
+    email: "kecidavid22@gmail.com",      
+    phone: "",
+    subject: "CV Downloaded",
+    message: "Someone downloaded your CV from your website.",
+  });
 };
 
 
