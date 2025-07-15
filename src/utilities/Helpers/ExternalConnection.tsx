@@ -2,7 +2,7 @@ import { Contacts } from "../../types/Contact";
 
 
 
-export const handledownload = (cv: string) => {
+export const  handledownload = async (cv: string) => {
   const isDataURL = cv.startsWith("data:");
   const isBlobURL = cv.startsWith("blob:");
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -44,13 +44,14 @@ export const handledownload = (cv: string) => {
     }
   }
 
-  sendMessage({
-    fullName: "CV Download Notification",
-    email: "kecidavid22@gmail.com",      
-    phone: "",
-    subject: "CV Downloaded",
-    message: "Someone downloaded your CV from your website.",
-  });
+sendMessage({
+  fullName: "CV Download Notification",
+  email: "kecidavid22@yourdomain.com",
+  phone: "+491234567890",
+  subject: "CV Downloaded",
+  message: "Someone downloaded your CV from your website.",
+});
+
 };
 
 
@@ -144,7 +145,6 @@ export const sendMessage = async (formData: Contacts) => {
       });
 
       const data = await response.json();
-
       if (data.success) {
         return "Form Submitted Successfully";
       } else {
