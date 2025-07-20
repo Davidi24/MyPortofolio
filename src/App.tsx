@@ -1,33 +1,37 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import EntryPage from "./pages/EntryPage";
-import me from "./assets/Icons/me.png"
+import me from "./assets/Icons/me.png";
 import { sendMessage } from "./utilities/Helpers/ExternalConnection";
 import { useEffect } from "react";
 
+// Helper to generate or get existing Browser ID
+function getBrowserId() {
+  let browserId = localStorage.getItem("browserId");
+  if (!browserId) {
+    browserId = crypto.randomUUID();
+    localStorage.setItem("browserId", browserId);
+  }
+  return browserId;
+}
 
 const Prova = () => {
   return (
     <>
       <img src={me} alt="" className="h-[40rem]" />
     </>
-  )
-}
-
-
+  );
+};
 
 function App() {
-
   useEffect(() => {
-    if (!sessionStorage.getItem('websiteOpened')) {
-      sendMessage({
-        fullName: "CV Download Notification",
-        email: "kecidavid22@yourdomain.com",
-        phone: "+491234567890",
-        subject: "Website opened",
-        message: "Someone opened your website",
-      });
-      sessionStorage.setItem('websiteOpened', 'true');
-    }
+    const browserId = getBrowserId();
+    sendMessage({
+      fullName: "CV Download Notification",
+      email: "kecidavid22@yourdomain.com",
+      phone: "+491234567890",
+      subject: "Website opened",
+      message: `Someone opened your website. BrowserID: ${browserId}`,
+    });
   }, []);
 
   return (
@@ -39,7 +43,6 @@ function App() {
         <Routes>
           <Route path="/prova" element={<Prova />} />
         </Routes>
-
       </div>
     </BrowserRouter>
   );
